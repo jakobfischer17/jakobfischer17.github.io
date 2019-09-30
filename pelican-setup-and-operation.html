@@ -27,8 +27,8 @@
                 Published: Di 24 September 2019
         </abbr>
 		<br />
-        <abbr class="modified" title="2019-09-24T21:50:00+02:00">
-                Updated: Di 24 September 2019
+        <abbr class="modified" title="2019-09-30T22:53:00+02:00">
+                Updated: Mo 30 September 2019
         </abbr>
 
         <address class="vcard author">
@@ -78,10 +78,7 @@
 <p>To publish your Pelican site as a GitHub User Page, you need to push everything  that's included in the <code>output</code> directory to the <code>master</code> branch of your <code>username.github.io</code> repository. </p>
 </li>
 <li>
-<p>Run <code>ghp-import output</code>. This creates a new branch <code>gh-pages</code> in your repository with all the generated files.</p>
-</li>
-<li>
-<p>To get the pushed content to the master branch, run <code>git push https://github.com/USERNAME/USERNAME.github.io.git gh-pages:master</code></p>
+<p>Run <code>ghp-import output -p -b master</code>. This pushes your content to the master branch.</p>
 </li>
 </ol>
 <p>And then you're done! This process is just the barebones stuff and a lot can be automated, as a starting point for that check out <a href="http://docs.getpelican.com/en/3.6.3/tips.html">this</a> documentation page . Have fun writing and coding! :)</p>
