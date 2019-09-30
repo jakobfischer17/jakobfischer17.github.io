@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+        <meta charset="utf-8" />
+        <title>Python Base - setup</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Python Base </a></h1>
+                <nav><ul>
+                    <li><a href="/category/python.html">Python</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/pelican-setup-and-operation.html">How to operate Pelican with Github Pages</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-09-24T21:50:00+02:00">
+                Published: Di 24 September 2019
+        </abbr>
+		<br />
+        <abbr class="modified" title="2019-09-24T21:50:00+02:00">
+                Updated: Di 24 September 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/jakob-fischer.html">Jakob Fischer</a>
+        </address>
+<p>In <a href="/category/python.html">Python</a>.</p>
+<p>tags: <a href="/tag/pelican.html">pelican</a> <a href="/tag/setup.html">setup</a> <a href="/tag/publishing.html">publishing</a> <a href="/tag/github.html">Github</a> <a href="/tag/pages.html">pages</a> <a href="/tag/windows.html">Windows</a> </p>
+</footer><!-- /.post-info --><p>Hello everyone, this is my first blog post. Since I am just starting out with Pelican, I want to put up a tutorial for myself and others on <strong>how to setup Pelican with Github Pages</strong> on your machine.</p>
+<p>Please consult the <a href="https://docs.getpelican.com/en/stable/">documentation</a> for Pelican in-depths guides. I assume you have Python 3.4+ installed on your machine.</p>
+<p>So without further ado, here is what I did to get Pelican running:</p>
+<ol>
+<li>
+<p>Run the following commands in a command-line window to install Pelican and Markdown.  <code>pip install pelican markdown</code></p>
+</li>
+<li>
+<p>Create a GitHub repository and name it like so: <strong>USERNAME.github.io</strong>. This is important, since it activates GitHub's pages functionality for this repo. This in turn allows you to host static content on your site for free. The repository name will also be the URL of your webpage.</p>
+</li>
+<li>
+<p>Clone the repo to your local machine.</p>
+</li>
+<li>
+<p>Navigate to where you cloned your repo, then run <code>pelican-quickstart</code> and answer the questions. Refer to the docs for more info about the individual questions. To set up your page with Github pages, choose "Y" when prompted for it. Then specify your URL.</p>
+</li>
+<li>
+<p>The newly created "content" folder is where you can store your blog posts. You can have any text content in there, the only mandatory fields are the ones specified below. T</p>
+</li>
+</ol>
+<p><code>Title: How to operate Pelican with Github Pages</code> 
+   <code>Date: 2019-09-24 21:50</code>
+   <code>Modified: 2019-09-24 21:50</code>
+   <code>Category: Python</code>
+   <code>Tags: pelican, setup, publishing, Github, pages, Windows</code>
+   <code>Slug: pelican-setup-and-operation</code>
+   <code>Authors: Jakob Fischer</code>
+   <code>Summary: How to use Pelican with Github Pages</code></p>
+<ol>
+<li>
+<p>From your directory, now run the <code>pelican content -o output -s pelicanconf.py</code> command to let Pelican work its magic and generate your site. The flags will make it easier to publish your page on GitHub.</p>
+</li>
+<li>
+<p>Optional: Run <code>pelican --listen</code> in a new command-line window to generate a site preview at  http://localhost:8000/</p>
+</li>
+<li>
+<p>Now we need to push your content to GitHub. The awesome ghp-import makes this easy for us. Run <code>pip install ghp-import</code> to install it.</p>
+</li>
+<li>
+<p>To publish your Pelican site as a GitHub User Page, you need to push everything  that's included in the <code>output</code> directory to the <code>master</code> branch of your <code>username.github.io</code> repository. </p>
+</li>
+<li>
+<p>Run <code>ghp-import output</code>. This creates a new branch <code>gh-pages</code> in your repository with all the generated files.</p>
+</li>
+<li>
+<p>To get the pushed content to the master branch, run <code>git push https://github.com/USERNAME/USERNAME.github.io.git gh-pages:master</code></p>
+</li>
+</ol>
+<p>And then you're done! This process is just the barebones stuff and a lot can be automated, as a starting point for that check out <a href="http://docs.getpelican.com/en/3.6.3/tips.html">this</a> documentation page . Have fun writing and coding! :)</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
